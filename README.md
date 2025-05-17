@@ -30,13 +30,50 @@ From the above characteristic table, we can directly write the next state equati
 
 /* write all the steps invloved */
 
+Step1: Define the specifications and initialize the design.
+
+Step2: Declare the name of the entity and architecture by using VHDL source code.
+
+Step3: Write the source code in VERILOG.
+
+Step4: Check the syntax and debug the errors if found, obtain the synthesis report.
+
+Step5: Verify the output by simulating the source code.
+
+Step6: Write all possible combinations of input using the test bench.
+
+Step7: Obtain the place and route report.
+
+
 **PROGRAM**
 
 /* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
 */
+```
+module ex9d( input clk, rst_n, input t,
+output reg q,
+output q_bar
+);
+always@(posedge clk) 
+begin 
+if(!rst_n)
+ q<=0;
+ else
+ if(t)
+ q<=~q;
+ else
+ q<=q;
+ end
+ 
+assign q_bar = ~q;
+endmodule
+```
 
 **RTL LOGIC FOR FLIPFLOPS**
+![Screenshot (6)](https://github.com/user-attachments/assets/bf256e6b-b3d3-420f-96e6-cc1f598cdad3)
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
+![Screenshot 2025-05-17 130406](https://github.com/user-attachments/assets/a56ea54d-4651-498e-83fa-50a110a9c5a6)
 
 **RESULTS**
+Thus the OUTPUT of Flip Flop is verified by synthesizing and simulating the VERILOG code
